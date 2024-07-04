@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+#ignore visual studio specific folders
+.vs/
+out/
