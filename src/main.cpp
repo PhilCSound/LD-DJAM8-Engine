@@ -3,11 +3,18 @@
 
 #include <iostream>
 #include "entity.hpp"
+#include "memorypool.hpp"
 
 int main()
 {
+	auto memPool = MemoryPool::GetInstance();
+
+	Entity main_character = memPool->CreateEntity();
+	Entity main_character1 = memPool->CreateEntity();
+	Entity main_character2 = memPool->CreateEntity();
+	Entity main_character3 = memPool->CreateEntity();
+
 	std::cout << "Hello CMake.\n";
-	Entity main_character{ 2 };
-	std::cout << main_character.Get_ID();
+	std::cout << main_character3.Get_ID();
 	return 0;
 }
