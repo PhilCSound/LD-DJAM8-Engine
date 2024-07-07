@@ -3,11 +3,8 @@
 #include <string>
 #include <map>
 #include <set>
-#include "entity.hpp"
 #include <memory>
 #include <cassert>
-
-class Entity;
 
 class ComponentManager
 {
@@ -20,7 +17,7 @@ public:
 	void operator=(const ComponentManager&) = delete;
 
 	//Public Member Functions
-	Entity CreateEntity(const std::string& tag = "");
+	unsigned int CreateEntityID(const std::string& tag = "");
 	
 	template<typename T>
 	void RegisterComponent()
@@ -29,7 +26,7 @@ public:
 		std::size_t index = m_componentArrays.size();
 		assert(!m_typeSet.contains(id) && "Error, component type has already been registered.");
 		m_typeIndexMap[id] = index;
-		m_componentArrays.push_back(std::make_shared<ComponentArray<T>>(MAX_NUM_ENTITYS));
+		m_componentArrays.push_back(std::make_shared<ComponentArray<T>>(m_maxNumEntities));
 		m_typeSet.insert(id);
 	}
 

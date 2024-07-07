@@ -9,7 +9,7 @@ ComponentManager::ComponentManager(std::size_t maxEntities, std::size_t maxCompT
 	m_entityActive.resize(m_maxNumEntities);
 }
 
-Entity ComponentManager::CreateEntity(const std::string& tag)
+unsigned int ComponentManager::CreateEntityID(const std::string& tag)
 {
 	for (auto i = 0U; i < m_entityActive.size(); i++)
 	{
@@ -17,9 +17,9 @@ Entity ComponentManager::CreateEntity(const std::string& tag)
 		{
 			m_entityActive.at(i) = true;
 			m_tags.at(i) = tag;
-			return Entity(i);
+			return i;
 		}
 	}
 	//TODO: DETERMINE HOW TO ERROR HANDLE THIS SCENARIO
-	return Entity(0);
+	return 9999;
 }
