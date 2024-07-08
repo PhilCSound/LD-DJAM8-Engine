@@ -11,8 +11,16 @@ endif()
 
 project ("djam")
 include_directories(${CMAKE_SOURCE_DIR}/include)
+
+set(SFML_DIR "C:/SFML-2.6.1/lib/cmake/SFML")
+
+
 # Add source to this project's executable.
-add_executable (djam "src/main.cpp" "src/entity.cpp"  "src/componentmanager.cpp"  "src/engine.cpp" "src/componentcontainer.cpp")
+add_executable (djam "src/main.cpp" "src/entity.cpp"  "src/componentmanager.cpp"  "src/engine.cpp")
+
+find_package(SFML COMPONENTS graphics audio network REQUIRED)
+find_package(OpenGL REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics sfml-audio sfml-network OpenGL::GL)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
 

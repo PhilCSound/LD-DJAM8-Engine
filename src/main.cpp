@@ -9,7 +9,7 @@ int main()
 	//Initialize MemPool and register some components.
 	Engine engine;
 
-	engine.Initialize();
+	engine.Initialize({800, 600}, "DJAM ENGINE");
 	
 	if (engine.IsRunning())
 	{

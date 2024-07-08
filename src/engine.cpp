@@ -5,9 +5,10 @@ Entity Engine::CreateEntity()
 	return Entity(m_compMan->CreateEntityID(), m_compMan);
 }
 
-void Engine::Initialize()
+void Engine::Initialize(const sf::VideoMode& vidMode, const std::string& windowName)
 {
 	m_isRunning = true;
+	m_renderWindow.create(vidMode, windowName);
 	m_compMan = std::make_shared<ComponentManager>(1000, 24);
 	m_compMan->RegisterComponent<int>();
 	m_compMan->RegisterComponent<double>();
@@ -29,5 +30,9 @@ void Engine::Run()
 
 
 	std::cout << player.GetComponent<int>();
+
+	while (m_renderWindow.isOpen())
+	{
+	}
 
 }
