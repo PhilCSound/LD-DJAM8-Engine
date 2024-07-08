@@ -1,6 +1,7 @@
 #pragma once
 #include "componentmanager.hpp"
 #include <memory>
+#include <cassert>
 
 class Entity
 {
@@ -19,9 +20,17 @@ class Entity
 			m_compManager->RemoveComponent<T>(m_id);
 		}
 
+		template<typename T>
+		T& GetComponent()
+		{
+			auto compPair = m_compManager->GetComponentPair<T>(m_id);
+			assert(compPair.first && "ENTITY DOES NOT HAVE COMPONENT");
+			return compPair.second;
+		}
+
 	private:
 		//Allowing only the ComponentManager to construct Entitys
-		friend class ComponentManager;
+		friend class Engine;
 
 		//Constructor
 		Entity(unsigned int id, std::shared_ptr<ComponentManager> cMan);

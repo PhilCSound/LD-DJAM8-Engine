@@ -5,6 +5,8 @@
 
 class IComponentArray
 {
+public:
+	virtual ~IComponentArray() = default;
 };
 
 template <typename ComponentType>

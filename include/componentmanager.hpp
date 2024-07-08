@@ -40,6 +40,13 @@ public:
 	}
 
 	template<typename T>
+	std::pair<bool, T>& GetComponentPair(unsigned int index)
+	{
+		auto compArray = GetComponentArray<T>();
+		return (*compArray)[index];
+	}
+
+	template<typename T>
 	void AddComponent(const T& val, unsigned int index)
 	{
 		std::shared_ptr<ComponentArray<T>> ptr = GetComponentArray<T>();

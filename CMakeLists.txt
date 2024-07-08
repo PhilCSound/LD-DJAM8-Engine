@@ -12,7 +12,9 @@ endif()
 project ("djam")
 include_directories(${CMAKE_SOURCE_DIR}/include)
 # Add source to this project's executable.
-add_executable (djam "src/main.cpp" "src/entity.cpp"  "src/componentmanager.cpp" )
+add_executable (djam "src/main.cpp" "src/entity.cpp"  "src/componentmanager.cpp"  "src/engine.cpp")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET djam PROPERTY CXX_STANDARD 20)
