@@ -16,7 +16,5 @@ int main()
 		engine.Run();
 	}
 
-	//std::cout << "Hello CMake.\n";
-	//std::cout << x->GetComponent(1);
 	return 7;
 }

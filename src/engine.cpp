@@ -22,6 +22,7 @@ void Engine::Run()
 {
 	Entity player = CreateEntity();
 	Entity player2 = CreateEntity();
+	player.AddComponent<int>(8227);
 	player.AddComponent<double>(3.346);
 	player2.AddComponent<int>(6);
 	player2.AddComponent<double>(43.546);
