@@ -53,7 +53,7 @@ void Entity::RemoveComponent()
 template<typename T>
 T& Entity::GetComponent()
 {
-	auto compPair = m_compManager->GetComponentPair<T>(m_id);
+	auto& compPair = m_compManager->GetComponentPair<T>(m_id);
 	assert(compPair.first && "ENTITY DOES NOT HAVE COMPONENT");
 	return compPair.second;
 }
