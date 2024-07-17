@@ -25,9 +25,12 @@ void OscillatePositionSystem::Update(std::shared_ptr<ComponentManager> cMan)
 				comp.y = 1000;
 		}
 	}
-
 }
 
 void OscillatePositionSystem::LateUpdate(std::shared_ptr<ComponentManager> cMan)
+{
+}
+
+void OscillatePositionSystem::Render(sf::RenderTarget& targ, std::shared_ptr<Engine> eng)
 {
 }

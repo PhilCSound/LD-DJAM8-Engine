@@ -15,8 +15,6 @@ void Engine::Initialize(const sf::VideoMode& vidMode, const std::string& windowN
 	m_compMan->RegisterComponent<double>();
 
 	m_systemManager = std::make_shared<SystemManager>(32);
-	m_systemManager->RegisterSystem("oscPos", new OscillatePositionSystem());
-
 }
 
 const bool Engine::IsRunning() const

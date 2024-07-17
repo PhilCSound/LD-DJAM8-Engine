@@ -3,8 +3,8 @@
 #include "entity.hpp"
 #include <iostream>
 #include "SFML/Graphics.hpp"
+#include "components/cposition.hpp"
 #include "systemmanager.hpp"
-#include "systems/oscillatepositionsystem.hpp"
 
 class SystemManager;
 

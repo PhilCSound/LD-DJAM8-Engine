@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "engine.hpp"
+#include "systems/oscillatepositionsystem.hpp"
 
 int main()
 {
@@ -10,7 +11,7 @@ int main()
 	Engine engine;
 
 	engine.Initialize({800, 600}, "DJAM ENGINE");
-	
+	engine.GetSystemManager()->RegisterSystem("osc", new OscillatePositionSystem{});
 	if (engine.IsRunning())
 	{
 		engine.Run();
