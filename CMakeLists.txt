@@ -21,7 +21,7 @@ add_executable (djam	"src/main.cpp"
 						"src/componentmanager.cpp"  
 						"src/engine.cpp" 
 						"src/systemmanager.cpp" 
-						"src/isystem.cpp" "src/systems/oscillatepositionsystem.cpp")
+						"src/isystem.cpp" "src/systems/oscillatepositionsystem.cpp" "src/scenemanager.cpp" "src/scenes/testscene.cpp")
 
 find_package(SFML COMPONENTS graphics audio network REQUIRED)
 find_package(OpenGL REQUIRED)

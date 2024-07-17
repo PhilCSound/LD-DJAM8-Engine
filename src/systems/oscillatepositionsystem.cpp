@@ -31,6 +31,6 @@ void OscillatePositionSystem::LateUpdate(std::shared_ptr<ComponentManager> cMan)
 {
 }
 
-void OscillatePositionSystem::Render(sf::RenderTarget& targ, std::shared_ptr<Engine> eng)
+void OscillatePositionSystem::Render(sf::RenderTarget& targ, Engine* eng)
 {
 }

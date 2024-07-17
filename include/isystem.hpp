@@ -13,7 +13,7 @@ public:
 	virtual void PreUpdate(std::shared_ptr<ComponentManager> cMan) = 0;
 	virtual void Update(std::shared_ptr<ComponentManager> cMan) = 0;
 	virtual void LateUpdate(std::shared_ptr<ComponentManager> cMan) = 0;
-	virtual void Render(sf::RenderTarget& targ, std::shared_ptr<Engine> eng) = 0;
+	virtual void Render(sf::RenderTarget& targ, Engine* eng) = 0;
 
 	const bool IsMultiThreadSafe() const;
 	void SetMultiThreadSafety(bool isSafe);
