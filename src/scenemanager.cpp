@@ -9,10 +9,16 @@ const std::size_t SceneManager::GetNumberOfQueuedScenes() const
 void SceneManager::QueueSceneChange(IScene* sceneToAdd)
 {
 	m_sceneList.push_back(sceneToAdd);
+	m_hasSceneChanged = true;
 }
 
 void SceneManager::UpdateScenes(Engine* eng)
 {
+	if (m_hasSceneChanged)
+	{
+		changeScene(eng);
+		m_hasSceneChanged = false;
+	}
 	std::size_t size = GetNumberOfQueuedScenes();
 	if (!size)
 		return;
@@ -24,6 +30,8 @@ void SceneManager::UpdateScenes(Engine* eng)
 void SceneManager::changeScene(Engine* eng)
 {
 	std::size_t size = GetNumberOfQueuedScenes();
+	if (size == 1)
+		m_sceneList.front()->Initialize(eng);
 	while (size > 1)
 	{
 		m_sceneList.front()->OnSceneDestroy(eng);

@@ -12,6 +12,7 @@ void Engine::Initialize(const sf::VideoMode& vidMode, const std::string& windowN
 	m_renderWindow.create(vidMode, windowName);
 	m_compMan = std::make_shared<ComponentManager>(1000, 24);
 	m_systemManager = std::make_shared<SystemManager>(32);
+	m_sceneMan = std::make_shared<SceneManager>();
 }
 
 const bool Engine::IsRunning() const

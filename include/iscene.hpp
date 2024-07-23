@@ -6,9 +6,9 @@ class Engine;
 class IScene
 {
 public:
-	virtual void Initialize(std::shared_ptr<Engine> eng) = 0;
-	virtual void OnSceneDestroy(std::shared_ptr<Engine> eng) = 0;
-	virtual void Update(std::shared_ptr<Engine> eng) = 0;
+	virtual void Initialize(Engine* eng) = 0;
+	virtual void OnSceneDestroy(Engine* eng) = 0;
+	virtual void Update(Engine* eng) = 0;
 
 protected:
 

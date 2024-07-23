@@ -19,5 +19,6 @@ private:
 	void changeScene(Engine* eng);
 
 	//Private MemberVariables
-	std::list<IScene*> m_sceneList;
+	bool m_hasSceneChanged = false;
+	std::list<IScene*> m_sceneList{};
 };
