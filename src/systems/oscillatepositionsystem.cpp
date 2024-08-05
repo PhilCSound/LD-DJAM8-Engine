@@ -1,16 +1,17 @@
 #pragma once
 #include "systems/oscillatepositionsystem.hpp"
 
-void OscillatePositionSystem::Initialize(std::shared_ptr<ComponentManager> cMan)
+void OscillatePositionSystem::Initialize(Engine* eng)
 {
 }
 
-void OscillatePositionSystem::PreUpdate(std::shared_ptr<ComponentManager> cMan)
+void OscillatePositionSystem::PreUpdate(Engine* eng)
 {
 }
 
-void OscillatePositionSystem::Update(std::shared_ptr<ComponentManager> cMan)
+void OscillatePositionSystem::Update(Engine* eng)
 {
+	auto cMan = eng->GetComponentManager();
 	auto compArray = cMan->GetComponentArray<CPosition>();
 	for (int i = 0; i < compArray->Size(); i++)
 	{
@@ -27,7 +28,7 @@ void OscillatePositionSystem::Update(std::shared_ptr<ComponentManager> cMan)
 	}
 }
 
-void OscillatePositionSystem::LateUpdate(std::shared_ptr<ComponentManager> cMan)
+void OscillatePositionSystem::LateUpdate(Engine* eng)
 {
 }
 

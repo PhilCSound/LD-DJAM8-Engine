@@ -27,7 +27,7 @@ void Engine::Run()
 	while (m_renderWindow.isOpen())
 	{
 		m_sceneMan->UpdateScenes(this);
-		m_systemManager->RunSystems(m_compMan);
+		m_systemManager->RunSystems(this);
 	}
 
 }

@@ -29,5 +29,5 @@ private:
 	std::shared_ptr<SceneManager> m_sceneMan;
 	std::shared_ptr<SystemManager> m_systemManager;
 	bool m_isRunning = false;
-	sf::RenderWindow m_renderWindow;
+	sf::RenderWindow m_renderWindow{};
 };

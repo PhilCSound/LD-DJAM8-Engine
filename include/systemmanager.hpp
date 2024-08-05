@@ -14,7 +14,7 @@ public:
 	ISystem* GetSystem(const std::string& systemName);
 	std::size_t GetNumberOfRegSystems();
 	bool RegisterSystem(const std::string& systemName, ISystem* systemToAdd);
-	void RunSystems(std::shared_ptr<ComponentManager> cMan);
+	void RunSystems(Engine* eng);
 	void UnRegisterSystem(const std::string& systemName);
 
 private:
