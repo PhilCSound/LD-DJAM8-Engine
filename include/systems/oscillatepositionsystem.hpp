@@ -6,11 +6,11 @@ class OscillatePositionSystem : public ISystem
 {
 
 public:
-	void Initialize(std::shared_ptr<ComponentManager>) override;
-	void PreUpdate(std::shared_ptr<ComponentManager>) override;
-	void Update(std::shared_ptr<ComponentManager>) override;
-	void LateUpdate(std::shared_ptr<ComponentManager>) override;
-	void Render(sf::RenderTarget& targ, std::shared_ptr<Engine> eng) override;
+	void Initialize(Engine* eng) override;
+	void PreUpdate(Engine* eng) override;
+	void Update(Engine* eng) override;
+	void LateUpdate(Engine* eng) override;
+	void Render(sf::RenderTarget& targ, Engine* eng) override;
 
 
 private:

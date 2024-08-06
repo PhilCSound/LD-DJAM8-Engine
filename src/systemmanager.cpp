@@ -31,17 +31,17 @@ bool SystemManager::RegisterSystem(const std::string& systemName, ISystem* syste
 	return true;
 }
 
-void SystemManager::RunSystems(std::shared_ptr<ComponentManager> cMan)
+void SystemManager::RunSystems(Engine* eng)
 {
 	//PreUpdate
 	for (auto& i : m_systemMap)
-		i.second->PreUpdate(cMan);
+		i.second->PreUpdate(eng);
 	//Update
 	for (auto& i : m_systemMap)
-		i.second->Update(cMan);
+		i.second->Update(eng);
 	//PreUpdate
 	for (auto& i : m_systemMap)
-		i.second->LateUpdate(cMan);
+		i.second->LateUpdate(eng);
 	
 }
 
