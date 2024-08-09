@@ -28,7 +28,14 @@ add_executable (djam	"src/main.cpp"
 						"src/componentmanager.cpp"  
 						"src/engine.cpp" 
 						"src/systemmanager.cpp" 
-						"src/isystem.cpp" "src/systems/oscillatepositionsystem.cpp" "src/scenemanager.cpp" "src/scenes/testscene.cpp")
+						"src/isystem.cpp" 
+                        "src/systems/oscillatepositionsystem.cpp" 
+                        "src/scenemanager.cpp" 
+                        "src/scenes/testscene.cpp" 
+                        "src/inputmanager.cpp" 
+                        "src/inputmap.cpp"
+                        "src/action.cpp" 
+                        "src/actionmanager.cpp")
 
 find_package(OpenGL REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics sfml-audio sfml-network OpenGL::GL)
